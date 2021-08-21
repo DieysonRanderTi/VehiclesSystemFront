@@ -1,31 +1,25 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { inject } from '@angular/core/testing';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 
-export class saleAdService implements OnInit{
+export class saleAdService{
 
   constructor(
     private http: HttpClient
   ){}
 
-  OnInit(){
-
+  GetAllSaleAd(): Observable<any>{
+    return this.http.get<any[]>(`${environment.apiUrl}/getAll`);
   }
-  ngOnInit(){}
 
-  GetAllSaleAd(){
+  insertSaleAd(object){
     debugger;
-    return this.http.get(`${environment.apiUrl}/get`)
-    .subscribe((error)=>{
-      if(error){
-        return;
-      }
-      else{
-
-      }
-    })
+    return this.http.post(`${environment.apiUrl}/insertSaleAd`, object);
   }
 }

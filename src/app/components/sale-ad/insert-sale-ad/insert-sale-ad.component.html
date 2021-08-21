@@ -1,0 +1,42 @@
+<div class="container">
+  <form (ngSubmit)="insertSaleAd()" [formGroup]="insertSaleAdForm">
+    <h3>Cadastro de anúncios</h3>
+    <div class="form-group">
+      <label>Marca</label>
+      <input type="number" class="form-control" placeholder="Escolha uma marca" formControlName="makeCarId">
+
+    </div>
+    <div class="form-group">
+      <label>Modelo</label>
+      <input type="number" class="form-control" placeholder="Escolha um Modelo" formControlName="carModelId">
+    </div>
+    <div class="form-group">
+      <label>Ano de fabricação</label>
+      <input type="date" class="form-control" formControlName="yearFabrication">
+    </div>
+    <div class="form-group">
+      <label>Data de venda</label>
+      <input type="date" class="form-control" formControlName="saleDate">
+    </div>
+    <div class="form-group">
+      <label>Preço de compra</label>
+      <input type="number" class="form-control"  placeholder="Digite um valor R$0,00" formControlName="buyValue">
+    </div>
+    <div class="form-group">
+      <label>Preço de venda</label>
+      <input type="number" class="form-control" placeholder="Digite um valor R$0,00" formControlName="saleValue">
+    </div>
+    <div class="form-group">
+      <label>Cor do veículo</label>
+      <input type="text" class="form-control" placeholder="Digite uma cor" formControlName="color">
+    </div>
+    <div class="form-group">
+      <label>Combustível</label>
+      <input type="text" class="form-control" placeholder="Password" formControlName="fuelType">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+    <button type="submit" class="btn btn-default" routerLink="">Voltar</button>
+  </form>
+</div>
+

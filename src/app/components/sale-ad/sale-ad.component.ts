@@ -1,5 +1,7 @@
 import { saleAdService } from './../../Services/saleAdService';
 import { Component, OnInit } from '@angular/core';
+import { SaleAd } from 'src/app/Model/SaleAd';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
   selector: 'app-sale-ad',
@@ -8,8 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaleAdComponent implements OnInit {
 
+  saleAds: Array<SaleAd>;
+  saleAdLista = new SaleAd()
+
   constructor(
-    private saleAd: saleAdService
+    private saleAd: saleAdService,
   ) { }
 
   ngOnInit(): void {
@@ -17,7 +22,14 @@ export class SaleAdComponent implements OnInit {
   }
 
   getAllSaleAd(){
-      let list = this.saleAd.GetAllSaleAd();
-      return list;
+      this.saleAd.GetAllSaleAd()
+      .subscribe((result:any)=>{
+        if(result != null)
+        this.saleAds = result;
+      },
+      erro=>{
+        alert('Erro ao buscar os anuncios :(. Tente novamente')
+      })
+
   }
 }
