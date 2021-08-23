@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <img class="card-img-top" src="../../../assets/marea.jpg">
+        <div class="card-body">
+          <h3 class="card-title">{{saleAd.carModel}}</h3>
+          <h5>{{saleAd.makeCar}}</h5>
+          <h5>{{saleAd.saleValue | currency : 'BRL': true : '1.2-3'}}</h5>
+          <span>{{saleAd.fuelType}}</span><br>
+          <span>{{saleAd.yearFabrication | date:"yyyy"}}</span>
+        </div>
+        <div class="card-footer text-muted">
+          <button class="btn btn-info" routerLink="">Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

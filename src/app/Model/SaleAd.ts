@@ -1,11 +1,19 @@
 export class SaleAd{
   id: number;
-  MakeCarId: number;
-  CarModelId: number;
-  YearFabrication: Date;
-  SaleDate: Date;
-  BuyValue: number;
-  SaleValue: number;
-  Color: string;
-  FuelType: string;
+  makeCarId: number;
+  carModelId: number;
+  carModel: {
+    id,
+    description
+  };
+  makeCar:{
+    id,
+    description
+  };
+  yearFabrication: Date;
+  saleDate: Date;
+  buyValue: number;
+  saleValue: number;
+  color: string;
+  fuelType: string;
 }

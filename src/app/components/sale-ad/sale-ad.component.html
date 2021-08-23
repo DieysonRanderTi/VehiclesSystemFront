@@ -1,30 +1,29 @@
-<div class="container-fluid display-flex">
+<div class="container-fluid">
   <main>
     <hr class="extra-margins">
-    <div class="row " *ngFor="let ad of saleAds">
+    <div class="row" *ngFor="let ad of saleAds">
       <!--First columnn-->
-      <class class="col-lg-3">
         <!--Card-->
-        <div class="card wow fadeIn" data-wow-delay="0.2s">
+        <div class="col-lg-3 wrapper">
+          <div class="card wow" data-wow-delay="0.2s">
+            <!--Card image-->
+            <img class="img-fluid" src="../../../assets/marea.jpg">
 
-          <!--Card image-->
-          <img class="img-fluid" src="../../../assets/marea.jpg"
-            alt="Card image cap">
-
-          <!--Card content-->
-          <div class="card-body">
-            <!--Title-->
-             <h4 class="card-title">{{ad.buyValue | currency : 'BRL'}}</h4>
-            <!--Text-->
-            <p class="card-text"><strong>Ano: </strong>{{ad.yearFabrication | date:"yyyy"}}</p>
-             <p class="card-text"><strong>Cor: </strong> {{ad.color}}</p>
-             <p class="card-text"><strong>Combustível: </strong> {{ad.fuelType}}</p>
-            <a href="#" class="btn btn-info">Detalhes</a>
+              <div class="position-cards">
+                <div class="card-body">
+                  <!--Title-->
+                   <h4>{{ad.saleValue | currency : 'BRL': true : '1.2-3'}}</h4>
+                  <!--Text-->
+                  <p class="card-text"><strong>Ano: </strong>{{ad.yearFabrication | date:"yyyy"}}</p>
+                   <p class="card-text"><strong>Cor: </strong> {{ad.color}}</p>
+                   <p class="card-text"><strong>Combustível: </strong> {{ad.fuelType}}</p>
+                  <button class="btn btn-info" [routerLink]="['/details',ad.id]">Detalhes</button>
+                </div>
+              </div>
+            <!--Card content-->
           </div>
-
         </div>
         <!--/.Card-->
-      </class>
       <!--First columnn-->
     </div>
   <!--/.Main layout-->

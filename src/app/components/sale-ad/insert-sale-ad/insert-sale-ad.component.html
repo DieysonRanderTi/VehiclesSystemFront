@@ -2,13 +2,16 @@
   <form (ngSubmit)="insertSaleAd()" [formGroup]="insertSaleAdForm">
     <h3>Cadastro de anúncios</h3>
     <div class="form-group">
-      <label>Marca</label>
-      <input type="number" class="form-control" placeholder="Escolha uma marca" formControlName="makeCarId">
-
+      <select class="form-select" aria-label="Default select example" id="modelId">
+        <option selected>Escolha uma Marca</option>
+        <option *ngFor="let model of carModel" value="{{model.id}}">{{model.description}}</option>
+      </select>
     </div>
     <div class="form-group">
-      <label>Modelo</label>
-      <input type="number" class="form-control" placeholder="Escolha um Modelo" formControlName="carModelId">
+        <select class="form-select form-select-lg mb-3" aria-label="Default select example" id="makeId">
+          <option selected>Escolha um Modelo</option>
+          <option *ngFor="let make of makeCar" value="{{make.id}}">{{make.description}}</option>
+        </select>
     </div>
     <div class="form-group">
       <label>Ano de fabricação</label>
